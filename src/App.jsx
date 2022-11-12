@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import Connecting from 'components/Connecting'
 import FullscreenToggle from 'components/FullscreenToggle'
