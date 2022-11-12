@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import Connecting from 'components/Connecting'
 import FullscreenToggle from 'components/FullscreenToggle'
@@ -8,6 +8,8 @@ import useToggleFullscreen from 'hooks/useToggleFullscreen'
 
 const App = () => {
   const appRef = useRef()
+  const inputRef = useRef()
+
   const toggleFullscreen = useToggleFullscreen(appRef)
 
   const shortcuts = {
@@ -34,10 +36,15 @@ const App = () => {
     },
   }
 
+  const focusInput = (e) => {
+    inputRef.current.focus()
+  }
+
   return (
-    <div className="min-h-screen App-Wrapper" ref={appRef}>
+    <div onClick={focusInput} className="min-h-screen App-Wrapper" ref={appRef}>
       <div className="relative min-h-screen p-5 App text-emerald selection:text-black selection:bg-emerald md:p-10">
         <pre className="overflow-y-hidden break-all whitespace-normal">
+          <input ref={inputRef} type="text" className="absolute -left-96" />
           <code>Welcome to cli.codybarr.dev...</code>
           <code>
             type "help" for commands, ⌘+k to clear, ⌘+f to go fullscreen!
