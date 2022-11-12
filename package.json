@@ -1,6 +1,5 @@
 {
-  "name": "mutiny",
-  "private": true,
+  "name": "cli.codybarr.dev",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
